@@ -33,26 +33,39 @@ namespace LinkedList
 
 
 
-        //Appeding the values to the List
-
-        public void Append(int new_data)
+        internal Node InsertAtParticularPosition(int position, int data)
         {
-            Node new_node = new Node(new_data);
-            if (head == null)
+            if (position < 1)
             {
-                head = new Node(new_data);
-                return;
+                Console.WriteLine("Invalid Position");
             }
 
-            new_node.next = null;
-            Node last = head;
-            while (last.next != null)
+            if (position == 1)
             {
-                last = last.next;
+                var newNode = new Node(data);
+                newNode.next = this.head;
+                head = newNode;
             }
-            last.next = new_node;
-            Console.WriteLine("{0} Is Inserted In The Linked List", last.next.data);
-            return;
+
+            else
+            {
+                while (position-- != 0)
+                {
+                    if (position == 1)
+                    {
+                        Node newNode = new Node(data);
+                        newNode.next = this.head.next;
+                        head.next = newNode;
+                        break;
+                    }
+                    head = head.next;
+                }
+                if (position != 1)
+                {
+                    Console.WriteLine("Position Out Of Range");
+                }
+            }
+            return head;
         }
         internal void Display()
         {
