@@ -27,11 +27,19 @@ namespace LinkedList
             }
             //Dispalys the list if it not empty
             Console.WriteLine("{0} inserted into Linked List", node.data);
+
+            
         }
 
+
+
+
         //Display method
+
         internal void Display()
         {
+            Console.WriteLine();
+
             Node temp = this.head;
             if(temp == null)
             {
