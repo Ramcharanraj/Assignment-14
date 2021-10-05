@@ -33,25 +33,39 @@ namespace LinkedList
 
 
 
+        //Appeding the values to the List
 
-        //Display method
-
-        internal void Display()
+        public void Append(int new_data)
         {
-            Console.WriteLine();
-
-            Node temp = this.head;
-            if(temp == null)
+            Node new_node = new Node(new_data);
+            if (head == null)
             {
-                Console.WriteLine("Listed List is Empty");
-                
+                head = new Node(new_data);
+                return;
             }
 
+            new_node.next = null;
+            Node last = head;
+            while (last.next != null)
+            {
+                last = last.next;
+            }
+            last.next = new_node;
+            Console.WriteLine("{0} Is Inserted In The Linked List", last.next.data);
+            return;
+        }
+        internal void Display()
+        {
+            Node temp = head;
+            if (temp == null)
+            {
+                Console.WriteLine("LinkedList is Empty");
+                return;
+            }
             while (temp != null)
             {
                 Console.Write(temp.data + " ");
                 temp = temp.next;
-
             }
         }
 
