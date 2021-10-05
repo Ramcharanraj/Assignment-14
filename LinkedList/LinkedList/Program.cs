@@ -18,8 +18,8 @@ namespace LinkedList
             list.Add(30);
             list.Add(70);
 
-            //calling method to remove Node
-            list.removeFirstNode();
+            //calling method to remove last Node
+            list.RemoveLastNode();
 
             //Method to Display the Node
             list.Display();

@@ -31,18 +31,29 @@ namespace LinkedList
             
         }
 
-
-
-        internal Node removeFirstNode()
+        
+        //To Remove last node
+        internal Node RemoveLastNode()
         {
-            if (this.head == null)
+            if (head == null)
             {
                 return null;
             }
-            this.head = this.head.next;
-            return this.head;
+            if (head.next == null)
+            {
+                return null;
+            }
+            Node newNode = head;
+            while (newNode.next.next != null)
+            {
+                newNode = newNode.next;
+            }
+            newNode.next = null;
+            return head;
         }
 
+
+        //Method to Display
         internal void Display()
         {
             Node temp = head;
