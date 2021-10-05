@@ -5,10 +5,10 @@ namespace LinkedList
 {
     public class LinkedList
     {
-
-        //Creating Node for list
         internal Node head;
 
+
+        // Adding to list
         internal void Add(int data)
         {
             Node node = new Node(data);
@@ -25,8 +25,26 @@ namespace LinkedList
                 }
                 temp.next = node;
             }
-            //Displaying the Linked list
+            //Dispalys the list if it not empty
             Console.WriteLine("{0} inserted into Linked List", node.data);
+        }
+
+        //Display method
+        internal void Display()
+        {
+            Node temp = this.head;
+            if(temp == null)
+            {
+                Console.WriteLine("Listed List is Empty");
+                
+            }
+
+            while (temp != null)
+            {
+                Console.Write(temp.data + " ");
+                temp = temp.next;
+
+            }
         }
 
     }
