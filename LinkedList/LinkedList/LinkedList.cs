@@ -33,40 +33,16 @@ namespace LinkedList
 
 
 
-        internal Node InsertAtParticularPosition(int position, int data)
+        internal Node removeFirstNode()
         {
-            if (position < 1)
+            if (this.head == null)
             {
-                Console.WriteLine("Invalid Position");
+                return null;
             }
-
-            if (position == 1)
-            {
-                var newNode = new Node(data);
-                newNode.next = this.head;
-                head = newNode;
-            }
-
-            else
-            {
-                while (position-- != 0)
-                {
-                    if (position == 1)
-                    {
-                        Node newNode = new Node(data);
-                        newNode.next = this.head.next;
-                        head.next = newNode;
-                        break;
-                    }
-                    head = head.next;
-                }
-                if (position != 1)
-                {
-                    Console.WriteLine("Position Out Of Range");
-                }
-            }
-            return head;
+            this.head = this.head.next;
+            return this.head;
         }
+
         internal void Display()
         {
             Node temp = head;
@@ -81,6 +57,7 @@ namespace LinkedList
                 temp = temp.next;
             }
         }
+
 
     }
 }

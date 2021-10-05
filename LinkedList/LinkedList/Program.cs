@@ -10,13 +10,18 @@ namespace LinkedList
         {
             Console.WriteLine("Welcome to LinkedList");
 
-            // Adding the values to Linked List
+            // Creation of Linked List
             LinkedList list = new LinkedList();
+
+            //Adding values to linked list
             list.Add(56);
+            list.Add(30);
             list.Add(70);
-            list.Display();
-            list.InsertAtParticularPosition(2, 30);
-            Console.WriteLine("\n\nLinked List After Insertion At Particular Position Is: ");
+
+            //calling method to remove Node
+            list.removeFirstNode();
+
+            //Method to Display the Node
             list.Display();
         }
     }
